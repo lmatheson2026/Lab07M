@@ -1,4 +1,4 @@
-package testing;
+import java.util.List;
 
 public class Lab7 {
 
@@ -6,11 +6,14 @@ public class Lab7 {
 		myFileReader A = new myFileReader();
 		myFoodPopularity B = new myFoodPopularity();
 		myFoodPopularity C = new myFoodPopularity();
-		mySimilarCountries D = new mySimilarCounries();
-
-		B.getFoodPopularity(A.readFileToTreeMap(Foods.csv));
-		C.getFoodPopularity(A.readFileToTreeMap(Foods.csv));
-		D.getSimilarCountries(A.readFileToTreeMap(Foods.csv));
+		mySimilarCountries D = new mySimilarCountries();
+		
+		 List<String> countries1 = List.of("Japan", "Iran");
+	        List<String> countries2 = List.of("Crotia", "Canada");
+	        System.out.println(A.readFileToTreeMap("Foods.csv"));
+		B.getFoodPopularity(A.readFileToTreeMap("Foods.csv"),countries1, countries2);
+		C.getFoodPopularity(A.readFileToTreeMap("Foods.csv"),countries1,countries2);
+		D.getSimilarCountries(A.readFileToTreeMap("Foods.csv"));
 	}
 
 }
